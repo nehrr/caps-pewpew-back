@@ -5,7 +5,7 @@ const UserController = require('../controllers/users_controller');
 
 router.get('/', UserController.index);
 router.get('/:id', UserController.show);
-// router.put('/user/:id', );
-// router.delete('/user/:id', );
+router.put('/:id', UserController.update);
+router.delete('/:id', UserController.delete);
 
 module.exports = router;
