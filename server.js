@@ -27,10 +27,12 @@ app.get('/', (req, res) => {
 
 // About routes definition
 const index = require('./routes/index');
-const user = require('./routes/user')
+const user = require('./routes/user');
+const caps = require('./routes/caps');
 
 app.use('/', index);
 app.use('/user', user);
+app.use('/caps', caps);
 
 // Catching 404 error and forwarding to error handler
 app.use((req, res, next) => {
