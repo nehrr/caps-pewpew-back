@@ -23,6 +23,12 @@ class ScreencapsController {
   random(req, res) {
 
     db.screencaps.find({
+        include: [
+          {
+            model: db.movie,
+            attributes: ['title']
+          }
+        ],
       order: [
         Sequelize.fn( 'RANDOM' )
       ]
