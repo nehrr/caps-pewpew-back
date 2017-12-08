@@ -26,12 +26,5 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
-  Caps.associate = function (db) {
-    db.caps.belongsToMany(db.user, {
-      onDelete: "CASCADE",
-      through: db.posts,
-    });
-  };
-
   return Caps;
 };
