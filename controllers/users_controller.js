@@ -56,7 +56,7 @@ class UsersController {
   // DELETE /users/:id
   delete(req, res) {
 
-    db.user.findOne({where: {id: req.params.id }}).then(user => {
+    db.user.findById(req.params.id).then(user => {
       if (!user) {
         res.status(400).json({ err: "No such user"});
       } else {

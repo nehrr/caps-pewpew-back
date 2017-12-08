@@ -47,7 +47,11 @@ module.exports = (sequelize, DataTypes) => {
     password_confirmation: {
       type: DataTypes.VIRTUAL
     },
-  }, {
+  },
+  {
+    underscored: true
+  },
+  {
     hooks: {
       beforeCreate: function(user) {
         if (user.password != user.password_confirmation) {

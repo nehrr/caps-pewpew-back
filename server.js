@@ -43,7 +43,7 @@ app.use((req, res, next) => {
 // LET'S ROCK!
 
 // database synchronization ...
-db.sequelize.sync().then(() => {
+db.sequelize.sync( { force: true } ).then(() => {
   console.log("Database configuration success!".green);
 
   // ... and server listening
