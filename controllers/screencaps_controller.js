@@ -5,8 +5,15 @@ class ScreencapsController {
 
   // GET caps
   index(req, res) {
-
-    db.screencaps.findAll().then(arCaps => {
+    let options = {
+      include: [
+        {
+          model: db.movie,
+          attributes: ['title']
+        }
+      ]
+    }
+    db.screencaps.findAll(options).then(arCaps => {
       res.status(200).json({ caps: arCaps})
     });
 
