@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
 
   // DESIGN
 
-  let Caps = sequelize.define('caps', {
+  let Screencaps = sequelize.define('screencaps', {
     path: {
       type: DataTypes.STRING,
       required: true,
@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
 
   //ASSOCIATION
 
-  Caps.associate = function (db) {
-    db.caps.belongsTo(db.movie, {
+  Screencaps.associate = function (db) {
+    db.screencaps.belongsTo(db.movie, {
       onDelete: "CASCADE",
       foreignKey: {
         allowNull: false
@@ -26,5 +26,5 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
-  return Caps;
+  return Screencaps;
 };

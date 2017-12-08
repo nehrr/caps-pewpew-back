@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
 //ASSOCIATION
 
 Movie.associate = function(db) {
-  db.movie.hasMany(db.caps);
+  db.movie.hasMany(db.screencaps);
 };
 
 return Movie;

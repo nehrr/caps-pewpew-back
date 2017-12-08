@@ -1,5 +1,4 @@
 const db = require('../models');
-const Sequelize = require('../models').Sequelize;
 
 class PostsController {
 

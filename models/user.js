@@ -78,7 +78,7 @@ module.exports = (sequelize, DataTypes) => {
   //ASSOCIATION
 
   User.associate = function (db) {
-    db.user.belongsToMany(db.caps, {
+    db.user.belongsToMany(db.screencaps, {
       onDelete: "CASCADE",
       through: db.posts,
     });
