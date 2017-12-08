@@ -3,14 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   // DESIGN
 
   let Posts = sequelize.define('posts', {
-    liked: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true
-    },
-    favourited: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true
-    }
+    liked: DataTypes.BOOLEAN,
+    favourited: DataTypes.BOOLEAN
   },
   {
     underscored: true

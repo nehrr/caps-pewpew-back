@@ -75,6 +75,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
+  //ASSOCIATION
+
+  User.associate = function (db) {
+    db.user.belongsToMany(db.caps, {
+      onDelete: "CASCADE",
+      through: db.posts,
+    });
+  };
+
   // EXTENDS METHODS
 
   User.prototype.checkPassword = function(password) {
